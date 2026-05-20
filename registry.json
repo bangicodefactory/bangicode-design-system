@@ -347,6 +347,96 @@
           "target": "components/ui/skeleton.tsx"
         }
       ]
+    },
+    {
+      "name": "sidebar-nav",
+      "type": "registry:ui",
+      "title": "Sidebar navigation",
+      "description": "Fixed 280px sidebar — primary-container Navy bg, Sky Blue 4px active indicator, mobile Sheet variant.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "sheet"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/sidebar-nav.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sidebar-nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "Data table",
+      "description": "TanStack Table v8 wrapper — Montserrat headers, JetBrains Mono numeric cells, surface-container row hover, no striping.",
+      "dependencies": ["@tanstack/react-table", "lucide-react"],
+      "registryDependencies": ["button", "input"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/data-table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "charts",
+      "type": "registry:ui",
+      "title": "Charts (Recharts)",
+      "description": "Line, Bar, Area, Pie wrappers — token-mapped Navy/Sky palette, outline-variant grid, JetBrains Mono tooltip.",
+      "dependencies": ["recharts"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/charts.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/charts.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stats-card",
+      "type": "registry:ui",
+      "title": "Stats card",
+      "description": "Number-forward metric card — Montserrat display number, JetBrains Mono label, delta indicator.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/stats-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/stats-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "Navigation breadcrumb — Hanken Grotesk body-sm, muted for inactive, foreground for current.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/breadcrumb.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Page navigation — ghost button style, JetBrains Mono page numbers, 4px radius.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pagination.tsx"
+        }
+      ]
     }
   ]
 }

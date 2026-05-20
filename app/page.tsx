@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { AlertCircle, Info, Settings, User } from "lucide-react";
+import { AlertCircle, Info, LayoutDashboard, Settings, ShoppingCart, User, Users } from "lucide-react";
 import { toast } from "sonner";
+import type { ColumnDef } from "@tanstack/react-table";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,6 +34,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SidebarNav, SidebarNavMobileTrigger } from "@/components/ui/sidebar-nav";
+import { DataTable, NumericCell, SortableHeader } from "@/components/ui/data-table";
+import { BangicodeLineChart, BangicodeBarChart, BangicodeAreaChart, BangicodePieChart } from "@/components/ui/charts";
+import { StatsCard } from "@/components/ui/stats-card";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 
 export default function HomePage() {
   return (
@@ -435,6 +442,255 @@ export default function HomePage() {
                 <Separator orientation="vertical" />
                 <span>API</span>
               </div>
+            </div>
+          </section>
+
+          {/* Sidebar navigation */}
+          <section className="space-y-6">
+            <h2 className="font-montserrat text-2xl font-semibold">Sidebar navigation</h2>
+            <p className="text-muted-foreground">
+              280px fixed, primary-container Navy background, Sky Blue 4px active indicator. Mobile
+              variant uses a Sheet trigger.
+            </p>
+            <div className="overflow-hidden rounded-sm border border-border">
+              <div className="flex h-64">
+                <SidebarNav
+                  sections={[
+                    {
+                      items: [
+                        { label: "Dashboard", href: "#", icon: LayoutDashboard, active: true },
+                        { label: "Users", href: "#", icon: Users },
+                        { label: "Orders", href: "#", icon: ShoppingCart },
+                        { label: "Settings", href: "#", icon: Settings },
+                      ],
+                    },
+                  ]}
+                  logo={
+                    <span className="font-montserrat text-sm font-semibold text-on-primary">
+                      Bangicode
+                    </span>
+                  }
+                />
+                <div className="flex flex-1 items-center justify-center bg-background text-sm text-muted-foreground">
+                  Main content area
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 rounded-sm border border-border bg-card p-4">
+              <SidebarNavMobileTrigger
+                sections={[
+                  {
+                    items: [
+                      { label: "Dashboard", href: "#", icon: LayoutDashboard, active: true },
+                      { label: "Users", href: "#", icon: Users },
+                      { label: "Settings", href: "#", icon: Settings },
+                    ],
+                  },
+                ]}
+              />
+              <span className="font-hanken-grotesk text-sm text-muted-foreground">
+                Mobile trigger (opens Sheet on small screens)
+              </span>
+            </div>
+          </section>
+
+          {/* Stats cards */}
+          <section className="space-y-6">
+            <h2 className="font-montserrat text-2xl font-semibold">Stats cards</h2>
+            <p className="text-muted-foreground">
+              Number-forward metric cards — Montserrat display number, JetBrains Mono label,
+              delta indicator.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <StatsCard label="Total revenue" value="$84,320" delta={12.4} deltaLabel="vs last month" />
+              <StatsCard label="Active users" value="3,291" delta={-3.1} deltaLabel="vs last week" />
+              <StatsCard label="Deployments" value="148" delta={0} deltaLabel="no change" />
+              <StatsCard label="Uptime" value="99.98%" description="Last 90 days" />
+            </div>
+          </section>
+
+          {/* Charts */}
+          <section className="space-y-6">
+            <h2 className="font-montserrat text-2xl font-semibold">Charts</h2>
+            <p className="text-muted-foreground">
+              Recharts wrappers — Navy/Sky palette, outline-variant grid lines, no drop shadows,
+              JetBrains Mono tooltip values.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              <div className="rounded-sm border border-border bg-card p-6">
+                <p className="mb-4 font-montserrat text-sm font-semibold">Line — monthly revenue</p>
+                <BangicodeLineChart
+                  data={[
+                    { month: "Jan", revenue: 42000, cost: 28000 },
+                    { month: "Feb", revenue: 51000, cost: 31000 },
+                    { month: "Mar", revenue: 47000, cost: 29000 },
+                    { month: "Apr", revenue: 63000, cost: 33000 },
+                    { month: "May", revenue: 58000, cost: 35000 },
+                    { month: "Jun", revenue: 72000, cost: 38000 },
+                  ]}
+                  xKey="month"
+                  series={[
+                    { key: "revenue", label: "Revenue" },
+                    { key: "cost", label: "Cost" },
+                  ]}
+                  showLegend
+                  height={220}
+                />
+              </div>
+              <div className="rounded-sm border border-border bg-card p-6">
+                <p className="mb-4 font-montserrat text-sm font-semibold">Bar — weekly signups</p>
+                <BangicodeBarChart
+                  data={[
+                    { week: "W1", signups: 120 },
+                    { week: "W2", signups: 98 },
+                    { week: "W3", signups: 145 },
+                    { week: "W4", signups: 132 },
+                    { week: "W5", signups: 167 },
+                  ]}
+                  xKey="week"
+                  series={[{ key: "signups", label: "Signups" }]}
+                  height={220}
+                />
+              </div>
+              <div className="rounded-sm border border-border bg-card p-6">
+                <p className="mb-4 font-montserrat text-sm font-semibold">Area — cumulative users</p>
+                <BangicodeAreaChart
+                  data={[
+                    { month: "Jan", users: 800 },
+                    { month: "Feb", users: 1200 },
+                    { month: "Mar", users: 1800 },
+                    { month: "Apr", users: 2400 },
+                    { month: "May", users: 3100 },
+                    { month: "Jun", users: 3900 },
+                  ]}
+                  xKey="month"
+                  series={[{ key: "users", label: "Users" }]}
+                  height={220}
+                />
+              </div>
+              <div className="rounded-sm border border-border bg-card p-6">
+                <p className="mb-4 font-montserrat text-sm font-semibold">Pie — plan distribution</p>
+                <BangicodePieChart
+                  data={[
+                    { name: "Starter", value: 1240 },
+                    { name: "Pro", value: 680 },
+                    { name: "Enterprise", value: 210 },
+                  ]}
+                  height={220}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* DataTable */}
+          <section className="space-y-6">
+            <h2 className="font-montserrat text-2xl font-semibold">Data table</h2>
+            <p className="text-muted-foreground">
+              TanStack Table v8 — Montserrat headers, JetBrains Mono numeric cells, surface-container
+              row hover, no striping, built-in sort and filter.
+            </p>
+            <DataTable
+              columns={
+                [
+                  {
+                    accessorKey: "name",
+                    header: ({ column }: { column: Parameters<typeof SortableHeader>[0]["column"] }) => (
+                      <SortableHeader column={column}>Name</SortableHeader>
+                    ),
+                  },
+                  {
+                    accessorKey: "plan",
+                    header: "Plan",
+                  },
+                  {
+                    accessorKey: "mrr",
+                    header: ({ column }: { column: Parameters<typeof SortableHeader>[0]["column"] }) => (
+                      <SortableHeader column={column}>MRR</SortableHeader>
+                    ),
+                    cell: ({ getValue }: { getValue: () => unknown }) => (
+                      <NumericCell value={`$${(getValue() as number).toLocaleString()}`} />
+                    ),
+                    meta: { numeric: true },
+                  },
+                  {
+                    accessorKey: "seats",
+                    header: "Seats",
+                    cell: ({ getValue }: { getValue: () => unknown }) => (
+                      <NumericCell value={getValue() as number} />
+                    ),
+                  },
+                  {
+                    accessorKey: "status",
+                    header: "Status",
+                    cell: ({ getValue }: { getValue: () => unknown }) => (
+                      <Badge variant={getValue() === "Active" ? "secondary" : "outline"}>
+                        {getValue() as string}
+                      </Badge>
+                    ),
+                  },
+                ] as ColumnDef<Record<string, unknown>, unknown>[]
+              }
+              data={[
+                { name: "Acme Corp", plan: "Enterprise", mrr: 4800, seats: 42, status: "Active" },
+                { name: "Globex", plan: "Pro", mrr: 890, seats: 8, status: "Active" },
+                { name: "Initech", plan: "Starter", mrr: 49, seats: 1, status: "Trial" },
+                { name: "Umbrella", plan: "Enterprise", mrr: 9600, seats: 88, status: "Active" },
+                { name: "Cyberdyne", plan: "Pro", mrr: 890, seats: 12, status: "Active" },
+                { name: "Soylent", plan: "Starter", mrr: 49, seats: 2, status: "Trial" },
+              ]}
+              filterColumn="name"
+              filterPlaceholder="Filter by name…"
+              pageSize={5}
+            />
+          </section>
+
+          {/* Breadcrumb + Pagination */}
+          <section className="space-y-6">
+            <h2 className="font-montserrat text-2xl font-semibold">Breadcrumb + Pagination</h2>
+            <div className="space-y-6 rounded-sm border border-border bg-card p-6">
+              <Breadcrumb>
+                <BreadcrumbList>
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="#">Home</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbLink href="#">Settings</BreadcrumbLink>
+                  </BreadcrumbItem>
+                  <BreadcrumbSeparator />
+                  <BreadcrumbItem>
+                    <BreadcrumbPage>Billing</BreadcrumbPage>
+                  </BreadcrumbItem>
+                </BreadcrumbList>
+              </Breadcrumb>
+
+              <Separator />
+
+              <Pagination>
+                <PaginationContent>
+                  <PaginationItem>
+                    <PaginationPrevious href="#" />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">1</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#" isActive>2</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">3</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationLink href="#">8</PaginationLink>
+                  </PaginationItem>
+                  <PaginationItem>
+                    <PaginationNext href="#" />
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             </div>
           </section>
 
