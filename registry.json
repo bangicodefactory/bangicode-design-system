@@ -437,6 +437,126 @@
           "target": "components/ui/pagination.tsx"
         }
       ]
+    },
+    {
+      "name": "hero-section",
+      "type": "registry:ui",
+      "title": "Hero section",
+      "description": "Top-of-page marketing hero — Montserrat display-lg headline, Hanken Grotesk copy, CTA pair, optional JetBrains Mono eyebrow.",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/hero-section.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hero-section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "feature-grid",
+      "type": "registry:ui",
+      "title": "Feature grid",
+      "description": "3-up / 4-up feature showcase — Lucide icon Sky Blue, headline-sm title, body-md description. Optional card chrome.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/feature-grid.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/feature-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pricing-table",
+      "type": "registry:ui",
+      "title": "Pricing table",
+      "description": "Side-by-side pricing tiers — featured tier with surface-container-high + Sky Blue left border, Montserrat price, Check icons.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button", "badge"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/pricing-table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pricing-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "cta-block",
+      "type": "registry:ui",
+      "title": "CTA block",
+      "description": "Full-width band — primary-container Navy bg, white display-md headline, single CTA button.",
+      "dependencies": [],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/cta-block.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/cta-block.tsx"
+        }
+      ]
+    },
+    {
+      "name": "testimonials",
+      "type": "registry:ui",
+      "title": "Testimonials",
+      "description": "Quote-led testimonial grid — card chrome, Hanken Grotesk quote, Avatar + JetBrains Mono role/company.",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/testimonials.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/testimonials.tsx"
+        }
+      ]
+    },
+    {
+      "name": "logo-cloud",
+      "type": "registry:ui",
+      "title": "Logo cloud",
+      "description": "Grayscale customer logo row — on-surface-variant tint, 5–6 per row, optional JetBrains Mono eyebrow.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/logo-cloud.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/logo-cloud.tsx"
+        }
+      ]
+    },
+    {
+      "name": "faq-section",
+      "type": "registry:ui",
+      "title": "FAQ section",
+      "description": "Accordion-based FAQ — stacked or split layout (heading left, answers right).",
+      "dependencies": [],
+      "registryDependencies": ["accordion"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/faq-section.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/faq-section.tsx"
+        }
+      ]
+    },
+    {
+      "name": "site-footer",
+      "type": "registry:ui",
+      "title": "Site footer",
+      "description": "3–4 column link grid + wordmark + copyright — JetBrains Mono column headings and legal line.",
+      "dependencies": [],
+      "registryDependencies": ["separator"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/site-footer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/site-footer.tsx"
+        }
+      ]
     }
   ]
 }

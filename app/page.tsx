@@ -694,6 +694,24 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Marketing blocks */}
+          <section className="space-y-4">
+            <h2 className="font-montserrat text-2xl font-semibold">Marketing blocks</h2>
+            <p className="text-muted-foreground">
+              Full-page composed sections — Hero, Feature grid, Pricing table, CTA band,
+              Testimonials, Logo cloud, FAQ, Footer. See them assembled at{" "}
+              <a href="/marketing" className="text-accent underline-offset-4 hover:underline">
+                /marketing
+              </a>
+              .
+            </p>
+            <div className="flex gap-3">
+              <Button variant="primary" asChild>
+                <a href="/marketing">View marketing page</a>
+              </Button>
+            </div>
+          </section>
+
           <footer className="border-t border-border pt-8 text-sm text-muted-foreground">
             DESIGN.md v0.1 · shadcn registry · Next.js
           </footer>
