@@ -1,0 +1,122 @@
+/**
+ * Bangicode theme.css
+ *
+ * Layer 1: theme.generated.css — tokens compiled from DESIGN.md (do not edit)
+ * Layer 2: shadcn semantic aliases (--background, --primary, etc.) mapped
+ *          from the Material 3 token set so any shadcn component pulled into
+ *          a Bangicode project picks up Bangicode styling automatically.
+ *
+ * To change a color/font/spacing value: edit DESIGN.md and re-run
+ *   npm run build:tokens
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./theme.generated.css";
+
+/* Dark mode: variant directive (Tailwind v4). Stub for first-class dark
+ * mode in v2 — pair with a DESIGN.dark.md export when we add it. */
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * Shadcn semantic aliases
+ *
+ * Maps DESIGN.md's Material 3 tokens onto the names every shadcn component
+ * expects (bg-primary, text-foreground, border-border, ring, etc.).
+ * ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --background: var(--color-background);
+  --foreground: var(--color-on-background);
+
+  --card: var(--color-surface-container-lowest);
+  --card-foreground: var(--color-on-surface);
+
+  --popover: var(--color-surface-container-high);
+  --popover-foreground: var(--color-on-surface);
+
+  --primary: var(--color-primary);
+  --primary-foreground: var(--color-on-primary);
+
+  --secondary: var(--color-secondary-container);
+  --secondary-foreground: var(--color-on-secondary-container);
+
+  --muted: var(--color-surface-container);
+  --muted-foreground: var(--color-on-surface-variant);
+
+  --accent: var(--color-secondary);
+  --accent-foreground: var(--color-on-secondary);
+
+  --destructive: var(--color-error);
+  --destructive-foreground: var(--color-on-error);
+
+  --border: var(--color-outline-variant);
+  --input: var(--color-outline-variant);
+  --ring: var(--color-secondary);
+
+  /* Sentence-case, 4px radius for components per DESIGN.md Shapes section */
+  --radius: var(--radius-sm);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * Dark mode placeholder
+ *
+ * To enable: create DESIGN.dark.md and update build-tokens.mjs to emit a
+ * second @theme block, then map values here. Until then, .dark is a no-op.
+ * ─────────────────────────────────────────────────────────────────────────── */
+.dark {
+  /* TODO: map dark tokens once DESIGN.dark.md exists */
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * Re-export shadcn aliases into @theme so utility classes (bg-primary etc.)
+ * resolve to the CSS variables defined above.
+ * ─────────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * Base layer — body defaults pulled from DESIGN.md Brand & Style
+ * ─────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-family: var(--font-hanken-grotesk);
+    background-color: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  code, kbd, samp, pre {
+    font-family: var(--font-jetbrains-mono);
+  }
+}

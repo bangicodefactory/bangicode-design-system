@@ -1,0 +1,3 @@
+/* Bangicode global stylesheet.
+ * The actual design system lives in /styles/theme.css — this file just imports it. */
+@import "../styles/theme.css";

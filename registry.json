@@ -1,0 +1,352 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "@bangicode",
+  "homepage": "https://design.bangicode.com",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Bangicode primary button — sentence case label, 4px radius, navy fill. Built from shadcn/Radix Slot + class-variance-authority.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Text input — surface fill, outline-variant border, 4px radius, Hanken Grotesk body-sm.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Accessible form label via Radix UI Label primitive, Hanken Grotesk text-sm.",
+      "dependencies": ["@radix-ui/react-label"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line text input — surface fill, outline-variant border, 4px radius, resizable.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Accessible select dropdown via Radix UI Select, surface fill, JetBrains Mono group labels.",
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Accessible checkbox via Radix UI Checkbox, 4px radius, Navy fill on checked.",
+      "dependencies": ["@radix-ui/react-checkbox", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio group",
+      "description": "Accessible radio group via Radix UI RadioGroup, 4px radius, Navy fill on selected.",
+      "dependencies": ["@radix-ui/react-radio-group", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Toggle switch via Radix UI Switch, 4px radius thumb, Navy fill when on.",
+      "dependencies": ["@radix-ui/react-switch"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "React Hook Form + Zod wrapper with accessible FormField, FormLabel, FormMessage primitives.",
+      "dependencies": ["react-hook-form", "@hookform/resolvers", "zod", "@radix-ui/react-slot"],
+      "registryDependencies": ["label"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/form.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Modal dialog via Radix UI Dialog — surface-container-high bg, 8px radius, scrim overlay.",
+      "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "Dropdown menu",
+      "description": "Accessible dropdown menu via Radix UI DropdownMenu — 4px radius, JetBrains Mono labels.",
+      "dependencies": ["@radix-ui/react-dropdown-menu", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Floating popover via Radix UI Popover — surface-container-high bg, 4px radius, no shadow.",
+      "dependencies": ["@radix-ui/react-popover"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "description": "Slide-in panel via Radix UI Dialog — 4 sides (top/bottom/left/right), scrim overlay.",
+      "dependencies": ["@radix-ui/react-dialog", "class-variance-authority", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tab navigation via Radix UI Tabs — Sky Blue 4px active indicator, no shadow.",
+      "dependencies": ["@radix-ui/react-tabs"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "Disclosure accordion via Radix UI Accordion — outline-variant dividers, no card shadow.",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Inline status alert — default, info, success, destructive variants. No shadow, border-only depth.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Toast (Sonner)",
+      "description": "Toast notifications via Sonner — top-right, JetBrains Mono optional label, Bangicode themed.",
+      "dependencies": ["sonner"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/sonner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Accessible tooltip via Radix UI Tooltip — surface-container-high bg, 4px radius, body-sm.",
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Status tag — JetBrains Mono, uppercase, 4px radius. Variants: default, primary, secondary, outline, destructive.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Container card — outline-variant border, surface background, 8px radius, 24px padding.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "Separator",
+      "description": "Horizontal or vertical 1px divider — outline-variant color via Radix UI Separator.",
+      "dependencies": ["@radix-ui/react-separator"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "User avatar via Radix UI Avatar — 4px radius (not circular), Hanken Grotesk initials fallback.",
+      "dependencies": ["@radix-ui/react-avatar"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Loading skeleton — muted background pulse animation, 4px radius, no shadow.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton.tsx"
+        }
+      ]
+    }
+  ]
+}

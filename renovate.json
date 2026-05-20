@@ -1,0 +1,61 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits"
+  ],
+  "schedule": ["before 6am on monday"],
+  "timezone": "Africa/Casablanca",
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 5,
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "description": "Auto-merge patch updates after CI passes — low risk, high noise reduction",
+      "matchUpdateTypes": ["patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Framework bumps get their own PR with extra scrutiny",
+      "matchPackageNames": ["next", "react", "react-dom"],
+      "groupName": "framework (next/react)",
+      "labels": ["dependencies", "framework-update"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "DESIGN.md spec updates — treat as design-system changes",
+      "matchPackageNames": ["@google/design.md"],
+      "groupName": "design.md spec",
+      "labels": ["dependencies", "design-spec-update"]
+    },
+    {
+      "description": "Tailwind + shadcn ecosystem — group together",
+      "matchPackageNames": [
+        "tailwindcss",
+        "@tailwindcss/postcss",
+        "tw-animate-css",
+        "shadcn",
+        "class-variance-authority",
+        "tailwind-merge"
+      ],
+      "groupName": "styling stack (tailwind + shadcn)",
+      "labels": ["dependencies", "styling-update"]
+    },
+    {
+      "description": "Group remaining dev dependency minor/patch updates",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "dev dependencies (minor/patch)"
+    }
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"]
+  },
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  }
+}
