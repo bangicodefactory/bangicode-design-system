@@ -72,11 +72,17 @@ export default function HomePage() {
               , shadcn/ui, and Next.js. One source of truth, one component layer, every Bangicode
               project in sync.
             </p>
-            <div className="flex gap-3 pt-2">
+            <div className="flex flex-wrap gap-3 pt-2">
               <Button variant="primary" asChild>
                 <Link href="/components">View registry</Link>
               </Button>
               <Button variant="secondary" asChild>
+                <Link href="/docs/first-install">Get started</Link>
+              </Button>
+              <Button variant="ghost" asChild>
+                <Link href="/changelog">Changelog</Link>
+              </Button>
+              <Button variant="ghost" asChild>
                 <a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener noreferrer">
                   Read the brief
                 </a>
