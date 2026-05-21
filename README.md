@@ -1,5 +1,8 @@
 # Bangicode Design System
 
+[![CI](https://github.com/bangicodefactory/bangicode-design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/bangicodefactory/bangicode-design-system/actions/workflows/ci.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3b49c8d2-25fb-4d11-a5b9-66c73812fcee/deploy-status)](https://app.netlify.com/projects/bangicode-design-system)
+
 > Engineered Trust — Bangicode's brand and component registry.
 > Built on **DESIGN.md** (Google Labs), **shadcn/ui**, and **Next.js (latest)**.
 
@@ -7,6 +10,10 @@ This repository is two things at once:
 
 1. **The source of truth for the Bangicode brand.** All colors, type, spacing, radii, and component rules live in [`DESIGN.md`](./DESIGN.md). Edit that file and everything downstream re-themes.
 2. **A private shadcn registry.** Other Bangicode projects pull components from here with one command — no copy-paste, no vendored libraries to keep in sync.
+
+---
+
+**Live:** [bangicode-design-system.netlify.app](https://bangicode-design-system.netlify.app) → [design.bangicode.com](https://design.bangicode.com) once DNS is wired up.
 
 ---
 

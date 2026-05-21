@@ -1,0 +1,10 @@
+[build]
+  command   = "npm run build:registry && npm run build"
+  publish   = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Next.js runtime — auto-detects SSR/RSC pages and wraps them in Netlify functions
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
