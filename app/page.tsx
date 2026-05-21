@@ -5,6 +5,7 @@ import { AlertCircle, Info, LayoutDashboard, Settings, ShoppingCart, User, Users
 import { toast } from "sonner";
 import type { ColumnDef } from "@tanstack/react-table";
 
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -49,7 +50,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl space-y-16">
           {/* Header */}
           <header className="flex flex-col gap-4 border-b border-border pb-8">
-            <Image src="/logo.svg" alt="Bangicode" width={280} height={44} priority />
+            <div className="flex items-center justify-between">
+              <Image src="/logo.svg" alt="Bangicode" width={280} height={44} priority />
+              <ThemeToggle />
+            </div>
             <p className="font-jetbrains-mono text-xs uppercase tracking-widest text-muted-foreground">
               Design system · v0.1.0 · alpha
             </p>

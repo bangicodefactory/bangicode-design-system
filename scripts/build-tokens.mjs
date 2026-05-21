@@ -8,7 +8,7 @@
  * Replaces the previous approach that called `npx @google/design.md export`
  * which hangs because the CLI does not yet ship a css-tailwind exporter.
  */
-import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import yaml from "js-yaml";
@@ -91,8 +91,39 @@ if (tokens.spacing) {
   lines.push("");
 }
 
+// Component tokens
+if (tokens.components) {
+  lines.push("  /* Component tokens */");
+  for (const [component, props] of Object.entries(tokens.components)) {
+    for (const [prop, value] of Object.entries(props)) {
+      lines.push(`  --component-${component}-${prop}: ${value};`);
+    }
+  }
+  lines.push("");
+}
+
 lines.push("}");
 lines.push("");
+
+// Dark mode overrides from DESIGN.dark.md
+const darkMdPath = join(root, "DESIGN.dark.md");
+if (existsSync(darkMdPath)) {
+  const darkContent = readFileSync(darkMdPath, "utf8");
+  const darkMatch = darkContent.match(/^---\n([\s\S]*?)\n---/);
+  if (darkMatch) {
+    const darkTokens = yaml.load(darkMatch[1]);
+    if (darkTokens.colors) {
+      lines.push(".dark {");
+      lines.push("  /* Dark-mode color overrides (from DESIGN.dark.md) */");
+      for (const [name, value] of Object.entries(darkTokens.colors)) {
+        lines.push(`  --color-${name}: ${value};`);
+      }
+      lines.push("}");
+      lines.push("");
+      console.log("[bangicode] emitted .dark overrides from DESIGN.dark.md");
+    }
+  }
+}
 
 mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, lines.join("\n"));

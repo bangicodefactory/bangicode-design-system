@@ -48,6 +48,7 @@ colors:
   background: '#f7f9ff'
   on-background: '#181c20'
   surface-variant: '#e0e2e8'
+  scrim: '#091D2E'
 typography:
   display-lg:
     fontFamily: Montserrat
@@ -124,6 +125,58 @@ spacing:
   space-3xl: 64px
   container-max: 1280px
   gutter: 24px
+components:
+  button:
+    radius: 0.25rem
+    focus-ring-width: 2px
+    focus-ring-offset: 2px
+    height-sm: 32px
+    height-md: 40px
+    height-lg: 48px
+  input:
+    radius: 0.25rem
+    border-width: 1px
+    height: 40px
+    padding-x: 12px
+  card:
+    radius: 0.5rem
+    padding: 24px
+    border-width: 1px
+  dialog:
+    radius: 0.5rem
+    scrim-opacity: 0.4
+    max-width: 32rem
+  sheet:
+    scrim-opacity: 0.4
+    max-width: 24rem
+  badge:
+    radius: 0.25rem
+    font-size: 11px
+    letter-spacing: 0.05em
+  avatar:
+    size-sm: 24px
+    size-md: 32px
+    size-lg: 40px
+  tooltip:
+    radius: 0.25rem
+    padding-x: 12px
+    padding-y: 6px
+  sidebar-nav:
+    width: 280px
+    active-border-width: 4px
+  data-table:
+    header-font-size: 13px
+    header-letter-spacing: 0.06em
+    row-height: 48px
+  stats-card:
+    number-font-size: 2.25rem
+  hero-section:
+    container-max-width: 1280px
+    heading-size-desktop: 48px
+    heading-size-mobile: 32px
+  pricing-table:
+    radius: 0.5rem
+    featured-border-width: 4px
 ---
 
 ## Brand & Style

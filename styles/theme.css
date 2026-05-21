@@ -54,18 +54,25 @@
   --input: var(--color-outline-variant);
   --ring: var(--color-secondary);
 
+  --scrim: var(--color-scrim);
+
   /* Sentence-case, 4px radius for components per DESIGN.md Shapes section */
   --radius: var(--radius-sm);
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
- * Dark mode placeholder
+ * Dark mode
  *
- * To enable: create DESIGN.dark.md and update build-tokens.mjs to emit a
- * second @theme block, then map values here. Until then, .dark is a no-op.
+ * Raw --color-* overrides are emitted by build-tokens.mjs from DESIGN.dark.md.
+ * The shadcn aliases below (--background, --primary, etc.) chain through
+ * var(--color-*) automatically, so no re-mapping is needed here.
+ *
+ * Add hand-authored overrides in this block only for aliases that need a
+ * different mapping in dark (e.g. a semantic role that flips sources).
  * ─────────────────────────────────────────────────────────────────────────── */
 .dark {
-  /* TODO: map dark tokens once DESIGN.dark.md exists */
+  /* All raw M3 token overrides come from theme.generated.css.
+     Alias re-mappings that differ from light mode go here. */
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
@@ -92,6 +99,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-scrim: var(--scrim);
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
