@@ -167,7 +167,7 @@ export default function HomePage() {
             <div className="grid gap-6 rounded-sm border border-border bg-card p-6 md:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="showcase-input">Email address</Label>
-                <Input id="showcase-input" type="email" placeholder="hello@bangicode.com" />
+                <Input id="showcase-input" type="email" placeholder="hello@bangicode.ma" />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="showcase-select">Plan</Label>
@@ -233,7 +233,7 @@ export default function HomePage() {
                 </TabsContent>
                 <TabsContent value="usage">
                   <p className="font-jetbrains-mono text-xs text-muted-foreground">
-                    npx shadcn add design.bangicode.com/r/tabs.json
+                    npx shadcn add design.bangicode.ma/r/tabs.json
                   </p>
                 </TabsContent>
                 <TabsContent value="api">
@@ -255,7 +255,7 @@ export default function HomePage() {
                 <AccordionItem value="item-2">
                   <AccordionTrigger>How do I add a component to my project?</AccordionTrigger>
                   <AccordionContent>
-                    Run <code className="font-jetbrains-mono text-xs">npx shadcn add design.bangicode.com/r/&lt;name&gt;.json</code>{" "}
+                    Run <code className="font-jetbrains-mono text-xs">npx shadcn add design.bangicode.ma/r/&lt;name&gt;.json</code>{" "}
                     in your Next.js project.
                   </AccordionContent>
                 </AccordionItem>

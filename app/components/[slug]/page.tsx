@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { REGISTRY_ITEMS, getItem } from "@/lib/registry-data";
 import { CopyButton } from "../_components/copy-button";
 
-const REGISTRY_HOST = "https://design.bangicode.com";
+const REGISTRY_HOST = "https://design.bangicode.ma";
 
 export function generateStaticParams() {
   return REGISTRY_ITEMS.map((item) => ({ slug: item.name }));

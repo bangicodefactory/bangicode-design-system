@@ -211,7 +211,7 @@ export default function MarketingShowcase() {
           {
             question: "How do I install a component in my project?",
             answer:
-              'Run `npx shadcn add https://design.bangicode.com/r/<name>.json` in your Next.js project. The component lands in components/ui/ already themed to Bangicode tokens.',
+              'Run `npx shadcn add https://design.bangicode.ma/r/<name>.json` in your Next.js project. The component lands in components/ui/ already themed to Bangicode tokens.',
           },
           {
             question: "Can I use this with a non-Next.js framework?",

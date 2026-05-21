@@ -13,7 +13,7 @@ This repository is two things at once:
 
 ---
 
-**Live:** [bangicode-design-system.netlify.app](https://bangicode-design-system.netlify.app) → [design.bangicode.com](https://design.bangicode.com) once DNS is wired up.
+**Live:** [bangicode-design-system.netlify.app](https://bangicode-design-system.netlify.app) → [design.bangicode.ma](https://design.bangicode.ma) once DNS is wired up.
 
 ---
 
@@ -78,7 +78,7 @@ Once this app is deployed (Vercel or any Node host), other projects install comp
 npx shadcn@latest init
 
 # Add a Bangicode component
-npx shadcn@latest add https://design.bangicode.com/r/button.json
+npx shadcn@latest add https://design.bangicode.ma/r/button.json
 ```
 
 That writes `components/ui/button.tsx` directly into the consumer's repo — they own the code, they can extend it, but visual changes flow from the registry on the next add/update.
