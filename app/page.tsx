@@ -65,7 +65,7 @@ export default function HomePage() {
               Bangicode&apos;s brand and component registry. Built on{" "}
               <a
                 href="https://github.com/google-labs-code/design.md"
-                className="text-secondary underline-offset-4 hover:underline"
+                className="text-accent underline-offset-4 hover:underline"
               >
                 DESIGN.md
               </a>
@@ -178,7 +178,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 <Label htmlFor="showcase-select">Plan</Label>
                 <Select>
-                  <SelectTrigger id="showcase-select">
+                  <SelectTrigger id="showcase-select" aria-label="Plan">
                     <SelectValue placeholder="Choose a plan" />
                   </SelectTrigger>
                   <SelectContent>
@@ -194,11 +194,11 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-8">
                 <div className="flex items-center gap-2">
-                  <Checkbox id="showcase-checkbox" />
+                  <Checkbox id="showcase-checkbox" aria-label="I agree to the terms" />
                   <Label htmlFor="showcase-checkbox">I agree to the terms</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch id="showcase-switch" />
+                  <Switch id="showcase-switch" aria-label="Notifications" />
                   <Label htmlFor="showcase-switch">Notifications</Label>
                 </div>
               </div>
@@ -206,11 +206,11 @@ export default function HomePage() {
                 <Label>Billing cycle</Label>
                 <RadioGroup defaultValue="monthly" className="flex gap-6">
                   <div className="flex items-center gap-2">
-                    <RadioGroupItem value="monthly" id="r-monthly" />
+                    <RadioGroupItem value="monthly" id="r-monthly" aria-label="Monthly" />
                     <Label htmlFor="r-monthly">Monthly</Label>
                   </div>
                   <div className="flex items-center gap-2">
-                    <RadioGroupItem value="annual" id="r-annual" />
+                    <RadioGroupItem value="annual" id="r-annual" aria-label="Annual" />
                     <Label htmlFor="r-annual">Annual</Label>
                   </div>
                 </RadioGroup>
@@ -377,7 +377,7 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-3">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" aria-label="Component info">
                       <Info className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -717,7 +717,7 @@ export default function HomePage() {
             <p className="text-muted-foreground">
               Full-page composed sections — Hero, Feature grid, Pricing table, CTA band,
               Testimonials, Logo cloud, FAQ, Footer. See them assembled at{" "}
-              <a href="/marketing" className="text-accent underline-offset-4 hover:underline">
+              <a href="/marketing" className="text-accent underline underline-offset-4">
                 /marketing
               </a>
               .

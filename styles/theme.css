@@ -103,6 +103,27 @@
 }
 
 /* ───────────────────────────────────────────────────────────────────────────
+ * Break circular CSS variable references.
+ *
+ * @theme inline above maps --color-* tokens back to the shadcn aliases
+ * (e.g. --color-primary: var(--primary)), which overrides the static M3
+ * values from theme.generated.css. When the alias itself also points back
+ * (--primary: var(--color-primary)), the result is a cycle that browsers
+ * resolve as an empty/invalid value.
+ *
+ * Fix: re-assert static values last in the cascade. These values must stay
+ * in sync with the corresponding tokens in DESIGN.md.
+ * ─────────────────────────────────────────────────────────────────────────── */
+:root {
+  --primary:    #000c2c;  /* DESIGN.md: color.primary */
+  --background: #f7f9ff;  /* DESIGN.md: color.background */
+  --scrim:      #091D2E;  /* DESIGN.md: color.scrim */
+  /* --accent chains through --color-secondary which @theme inline sets to
+     var(--secondary) = sky blue, not the M3 ocean value we want here. */
+  --accent:     #016397;  /* DESIGN.md: color.secondary (ocean blue) */
+}
+
+/* ───────────────────────────────────────────────────────────────────────────
  * Base layer — body defaults pulled from DESIGN.md Brand & Style
  * ─────────────────────────────────────────────────────────────────────────── */
 @layer base {

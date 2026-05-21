@@ -191,6 +191,7 @@ function DataTable<TData extends RowData>({
     <div className={cn("space-y-4", className)}>
       {filterColumn && (
         <Input
+          aria-label={filterPlaceholder}
           placeholder={filterPlaceholder}
           value={(table.getColumn(filterColumn)?.getFilterValue() as string) ?? ""}
           onChange={(e) =>
