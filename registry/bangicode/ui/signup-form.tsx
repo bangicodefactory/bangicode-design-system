@@ -60,7 +60,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
                 </Button>
                 <FieldDescription className="text-center">
                   Already have an account?{" "}
-                  <a href="#" className="text-accent underline-offset-4 hover:underline">
+                  <a href="#" className="text-accent underline underline-offset-4">
                     Sign in
                   </a>
                 </FieldDescription>
