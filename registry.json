@@ -557,6 +557,96 @@
           "target": "components/ui/site-footer.tsx"
         }
       ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "description": "Radix Collapsible primitive — used by sidebar submenus and disclosure patterns.",
+      "dependencies": ["@radix-ui/react-collapsible"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "description": "Form field primitives — Field, FieldGroup, FieldLabel, FieldDescription, FieldError, FieldSeparator with vertical/horizontal/responsive orientations.",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["label", "separator"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Full-featured collapsible sidebar — icon mode (sidebar-07), submenu mode (sidebar-03), offcanvas mobile. Ctrl+B keyboard shortcut, cookie-persisted state.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority"],
+      "registryDependencies": ["button", "input", "separator", "sheet", "skeleton", "tooltip"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sidebar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-form",
+      "type": "registry:ui",
+      "title": "Login form",
+      "description": "Card-based sign-in form with email + password fields, forgot-password link, and OAuth button slot.",
+      "dependencies": [],
+      "registryDependencies": ["button", "card", "field", "input"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/login-form.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/login-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "login-form-split",
+      "type": "registry:ui",
+      "title": "Login form (split)",
+      "description": "Split-panel sign-in — form on the left, full-bleed image on the right. Includes Apple/Google/Meta OAuth buttons.",
+      "dependencies": [],
+      "registryDependencies": ["button", "card", "field", "input"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/login-form-split.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/login-form-split.tsx"
+        }
+      ]
+    },
+    {
+      "name": "signup-form",
+      "type": "registry:ui",
+      "title": "Signup form",
+      "description": "Card-based account creation form — full name, email, password + confirm password, Google OAuth.",
+      "dependencies": [],
+      "registryDependencies": ["button", "card", "field", "input"],
+      "files": [
+        {
+          "path": "registry/bangicode/ui/signup-form.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/signup-form.tsx"
+        }
+      ]
     }
   ]
 }
