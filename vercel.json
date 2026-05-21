@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build:registry && npm run build",
+  "installCommand": "npm ci",
+  "framework": "nextjs",
+  "nodeVersion": "22.x"
+}

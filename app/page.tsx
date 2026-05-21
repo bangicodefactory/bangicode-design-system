@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { AlertCircle, Info, LayoutDashboard, Settings, ShoppingCart, User, Users } from "lucide-react";
 import { toast } from "sonner";
 import type { ColumnDef } from "@tanstack/react-table";
@@ -72,8 +73,14 @@ export default function HomePage() {
               project in sync.
             </p>
             <div className="flex gap-3 pt-2">
-              <Button variant="primary">View registry</Button>
-              <Button variant="secondary">Read the brief</Button>
+              <Button variant="primary" asChild>
+                <Link href="/components">View registry</Link>
+              </Button>
+              <Button variant="secondary" asChild>
+                <a href="https://github.com/google-labs-code/design.md" target="_blank" rel="noopener noreferrer">
+                  Read the brief
+                </a>
+              </Button>
             </div>
           </header>
 
