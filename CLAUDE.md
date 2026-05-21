@@ -69,7 +69,7 @@ DESIGN.md  ──build-tokens.mjs──▶  styles/theme.generated.css   (auto, 
 ## Decisions already made (don't re-litigate without asking)
 
 ### Token authority over logo
-The DESIGN.md token palette is **authoritative**. `logo.svg` was refreshed in IST-184 and now uses exactly two colours: `#000c2c` (Primary Navy) and `#016397` (Ocean Blue). All previous off-palette values (`#114483`, `#2E91CE`, `#D30F33`, etc.) have been removed. Do not re-introduce hex values to the logo that aren't in DESIGN.md.
+The DESIGN.md token palette is **authoritative** for the UI. The `logo.svg` uses brighter blues (`#114483`, `#2E91CE`) and a crimson (`#D30F33`) that intentionally diverge from the current tokens — the logo is a separate brand asset with its own colour heritage. **Do not modify logo.svg colours to match DESIGN.md tokens, and do not add logo-derived tokens to DESIGN.md.** The divergence is accepted and documented here. If this decision is ever reopened, the three options are: (1) refresh the logo to tokens, (2) add logo colours as off-scheme tokens, or (3) keep the intentional split (current choice).
 
 ### Material 3 → shadcn alias mapping
 DESIGN.md uses a Material 3 token vocabulary (`surface-container`, `on-primary`, `outline-variant`, etc.). The mapping to shadcn semantic tokens is in `styles/theme.css` and was deliberately chosen:
@@ -93,6 +93,7 @@ DESIGN.md uses a Material 3 token vocabulary (`surface-container`, `on-primary`,
 If you propose changing this mapping, surface the trade-off explicitly — it propagates to every component.
 
 ### Deferred (intentionally, not forgotten)
+- **Logo / palette reconciliation.** See "Token authority over logo" above. Decision: keep the intentional split (option 3). Do not reopen without user instruction.
 - **The rest of v1 scope.** All 30+ primitives, dashboard, and marketing components are now seeded. Pattern is in `registry/bangicode/ui/button.tsx` — follow it for new components.
 
 ---
