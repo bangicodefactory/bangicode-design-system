@@ -79,7 +79,7 @@ export function LoginFormSplit({ className, ...props }: React.ComponentProps<"di
               </Field>
               <FieldDescription className="text-center">
                 Don&apos;t have an account?{" "}
-                <a href="#" className="text-accent underline-offset-4 hover:underline">
+                <a href="#" className="text-accent underline underline-offset-4">
                   Sign up
                 </a>
               </FieldDescription>
@@ -97,11 +97,11 @@ export function LoginFormSplit({ className, ...props }: React.ComponentProps<"di
       </Card>
       <FieldDescription className="px-6 text-center">
         By signing in you agree to our{" "}
-        <a href="#" className="text-accent underline-offset-4 hover:underline">
+        <a href="#" className="text-accent underline underline-offset-4">
           Terms of service
         </a>{" "}
         and{" "}
-        <a href="#" className="text-accent underline-offset-4 hover:underline">
+        <a href="#" className="text-accent underline underline-offset-4">
           Privacy policy
         </a>
         .
