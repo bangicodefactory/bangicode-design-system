@@ -69,7 +69,7 @@ DESIGN.md  ──build-tokens.mjs──▶  styles/theme.generated.css   (auto, 
 ## Decisions already made (don't re-litigate without asking)
 
 ### Token authority over logo
-The DESIGN.md token palette is **authoritative**. The `logo.svg` uses brighter blues (#114483, #2E91CE) and a crimson (#D30F33) that don't match the current tokens. Treat the logo as an older asset — the brand is moving toward the DESIGN.md palette, not the logo. Do not propose adding logo-derived tokens unless the user reopens this.
+The DESIGN.md token palette is **authoritative**. `logo.svg` was refreshed in IST-184 and now uses exactly two colours: `#000c2c` (Primary Navy) and `#016397` (Ocean Blue). All previous off-palette values (`#114483`, `#2E91CE`, `#D30F33`, etc.) have been removed. Do not re-introduce hex values to the logo that aren't in DESIGN.md.
 
 ### Material 3 → shadcn alias mapping
 DESIGN.md uses a Material 3 token vocabulary (`surface-container`, `on-primary`, `outline-variant`, etc.). The mapping to shadcn semantic tokens is in `styles/theme.css` and was deliberately chosen:
@@ -93,10 +93,7 @@ DESIGN.md uses a Material 3 token vocabulary (`surface-container`, `on-primary`,
 If you propose changing this mapping, surface the trade-off explicitly — it propagates to every component.
 
 ### Deferred (intentionally, not forgotten)
-- **Dark mode.** `.dark` selector exists as a no-op stub. To enable: create `DESIGN.dark.md`, extend `build-tokens.mjs` to emit a second `@theme` block, populate `.dark { ... }` in `theme.css`.
-- **`components:` block in DESIGN.md YAML.** Component styling currently lives in prose only. When ready, codify buttons/cards/inputs as machine-readable tokens.
-- **Logo / palette reconciliation.** See "Token authority" above.
-- **The rest of v1 scope.** Only `Button` is seeded. Remaining: Input, Card, Dialog, Dropdown, Form, Select, Tooltip, Tabs, Toast, Sidebar, DataTable, Chart, Stats card, Hero, Feature grid, Pricing, CTA. Pattern is in `registry/bangicode/ui/button.tsx` — follow it.
+- **The rest of v1 scope.** All 30+ primitives, dashboard, and marketing components are now seeded. Pattern is in `registry/bangicode/ui/button.tsx` — follow it for new components.
 
 ---
 
