@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 import { Label } from "@/registry/bangicode/ui/label";
@@ -119,7 +119,7 @@ function FieldLabel({ className, ...props }: React.ComponentProps<typeof Label>)
 function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="field-label"
+      data-slot="field-title"
       className={cn(
         "flex w-fit items-center gap-2 font-hanken-grotesk text-sm leading-snug font-medium group-data-[disabled=true]/field:opacity-50",
         className,
@@ -177,7 +177,7 @@ function FieldError({
 }: React.ComponentProps<"div"> & {
   errors?: Array<{ message?: string } | undefined>;
 }) {
-  const content = useMemo(() => {
+  const content = React.useMemo(() => {
     if (children) return children;
     if (!errors?.length) return null;
     const uniqueErrors = [

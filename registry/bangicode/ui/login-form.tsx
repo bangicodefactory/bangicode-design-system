@@ -47,7 +47,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
                 <Button type="submit" className="w-full">
                   Sign in
                 </Button>
-                <Button variant="outline" type="button" className="w-full">
+                <Button variant="secondary" type="button" className="w-full">
                   Sign in with Google
                 </Button>
                 <FieldDescription className="text-center">
