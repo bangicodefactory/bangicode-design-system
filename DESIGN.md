@@ -144,10 +144,10 @@ components:
     border-width: 1px
   dialog:
     radius: 0.5rem
-    scrim-opacity: 0.4
+    scrim-opacity: '0.4'
     max-width: 32rem
   sheet:
-    scrim-opacity: 0.4
+    scrim-opacity: '0.4'
     max-width: 24rem
   badge:
     radius: 0.25rem
