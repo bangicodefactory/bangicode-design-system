@@ -31,12 +31,12 @@ const buttonVariants = cva(
         primary:
           "bg-primary text-primary-foreground hover:bg-primary-container",
         secondary:
-          "border border-secondary text-secondary hover:bg-secondary-container hover:text-secondary-foreground",
+          "border border-secondary text-accent hover:bg-secondary hover:text-secondary-foreground",
         ghost:
           "text-foreground hover:bg-muted hover:text-foreground",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-error-container hover:text-on-error-container",
-        link: "text-secondary underline-offset-4 hover:underline",
+        link: "text-accent underline-offset-4 hover:underline",
       },
       size: {
         sm: "h-8 px-3 text-xs",

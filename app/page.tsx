@@ -42,6 +42,14 @@ import { BangicodeLineChart, BangicodeBarChart, BangicodeAreaChart, BangicodePie
 import { StatsCard } from "@/components/ui/stats-card";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import {
+  SidebarProvider, Sidebar, SidebarContent, SidebarFooter, SidebarGroup,
+  SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarInset,
+  SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarRail, SidebarTrigger,
+} from "@/components/ui/sidebar";
+import { LoginForm } from "@/components/ui/login-form";
+import { LoginFormSplit } from "@/components/ui/login-form-split";
+import { SignupForm } from "@/components/ui/signup-form";
 
 export default function HomePage() {
   return (
@@ -65,7 +73,7 @@ export default function HomePage() {
               Bangicode&apos;s brand and component registry. Built on{" "}
               <a
                 href="https://github.com/google-labs-code/design.md"
-                className="text-secondary underline-offset-4 hover:underline"
+                className="text-accent underline-offset-4 hover:underline"
               >
                 DESIGN.md
               </a>
@@ -178,7 +186,7 @@ export default function HomePage() {
               <div className="space-y-2">
                 <Label htmlFor="showcase-select">Plan</Label>
                 <Select>
-                  <SelectTrigger id="showcase-select">
+                  <SelectTrigger id="showcase-select" aria-label="Plan">
                     <SelectValue placeholder="Choose a plan" />
                   </SelectTrigger>
                   <SelectContent>
@@ -194,11 +202,11 @@ export default function HomePage() {
               </div>
               <div className="flex items-center gap-8">
                 <div className="flex items-center gap-2">
-                  <Checkbox id="showcase-checkbox" />
+                  <Checkbox id="showcase-checkbox" aria-label="I agree to the terms" />
                   <Label htmlFor="showcase-checkbox">I agree to the terms</Label>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Switch id="showcase-switch" />
+                  <Switch id="showcase-switch" aria-label="Notifications" />
                   <Label htmlFor="showcase-switch">Notifications</Label>
                 </div>
               </div>
@@ -206,11 +214,11 @@ export default function HomePage() {
                 <Label>Billing cycle</Label>
                 <RadioGroup defaultValue="monthly" className="flex gap-6">
                   <div className="flex items-center gap-2">
-                    <RadioGroupItem value="monthly" id="r-monthly" />
+                    <RadioGroupItem value="monthly" id="r-monthly" aria-label="Monthly" />
                     <Label htmlFor="r-monthly">Monthly</Label>
                   </div>
                   <div className="flex items-center gap-2">
-                    <RadioGroupItem value="annual" id="r-annual" />
+                    <RadioGroupItem value="annual" id="r-annual" aria-label="Annual" />
                     <Label htmlFor="r-annual">Annual</Label>
                   </div>
                 </RadioGroup>
@@ -377,7 +385,7 @@ export default function HomePage() {
               <div className="flex flex-wrap items-center gap-3">
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" aria-label="Component info">
                       <Info className="h-4 w-4" />
                     </Button>
                   </TooltipTrigger>
@@ -711,13 +719,98 @@ export default function HomePage() {
             </div>
           </section>
 
+          {/* Sidebar */}
+          <section className="space-y-4">
+            <h2 className="font-montserrat text-2xl font-semibold">Sidebar</h2>
+            <p className="text-muted-foreground">
+              Full sidebar system — collapsible rail, mobile sheet fallback, sub-menus, badges.
+              Wrap your layout in <code className="font-jetbrains-mono text-sm bg-muted px-1 rounded-sm">SidebarProvider</code>.
+            </p>
+            <div className="overflow-hidden rounded-lg border border-border" style={{ height: "420px", transform: "translateZ(0)" }}>
+              <SidebarProvider>
+                <Sidebar>
+                  <SidebarHeader className="px-4 py-3">
+                    <span className="font-montserrat font-semibold text-sm">Bangicode</span>
+                  </SidebarHeader>
+                  <SidebarContent>
+                    <SidebarGroup>
+                      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+                      <SidebarGroupContent>
+                        <SidebarMenu>
+                          {[
+                            { label: "Dashboard", icon: LayoutDashboard },
+                            { label: "Customers", icon: Users },
+                            { label: "Products", icon: ShoppingCart },
+                            { label: "Settings", icon: Settings },
+                          ].map(({ label, icon: Icon }) => (
+                            <SidebarMenuItem key={label}>
+                              <SidebarMenuButton asChild>
+                                <a href="#">
+                                  <Icon className="h-4 w-4" />
+                                  <span>{label}</span>
+                                </a>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          ))}
+                        </SidebarMenu>
+                      </SidebarGroupContent>
+                    </SidebarGroup>
+                    <SidebarGroup>
+                      <SidebarGroupLabel>Account</SidebarGroupLabel>
+                      <SidebarGroupContent>
+                        <SidebarMenu>
+                          <SidebarMenuItem>
+                            <SidebarMenuButton asChild>
+                              <a href="#">
+                                <User className="h-4 w-4" />
+                                <span>Profile</span>
+                              </a>
+                            </SidebarMenuButton>
+                          </SidebarMenuItem>
+                        </SidebarMenu>
+                      </SidebarGroupContent>
+                    </SidebarGroup>
+                  </SidebarContent>
+                  <SidebarFooter className="px-4 py-3 text-xs text-muted-foreground font-hanken-grotesk">
+                    v0.1.0
+                  </SidebarFooter>
+                  <SidebarRail />
+                </Sidebar>
+                <SidebarInset>
+                  <header className="flex h-14 shrink-0 items-center gap-2 border-b border-border px-4">
+                    <SidebarTrigger />
+                    <span className="font-montserrat text-sm font-semibold">Dashboard</span>
+                  </header>
+                  <div className="flex flex-1 items-center justify-center text-sm text-muted-foreground p-8">
+                    Page content area — toggle the sidebar with the trigger above.
+                  </div>
+                </SidebarInset>
+              </SidebarProvider>
+            </div>
+          </section>
+
+          {/* Auth forms */}
+          <section className="space-y-4">
+            <h2 className="font-montserrat text-2xl font-semibold">Auth forms</h2>
+            <p className="text-muted-foreground">
+              Sign-in and sign-up blocks built on Field primitives. All{" "}
+              <code className="font-jetbrains-mono text-sm bg-muted px-1 rounded-sm">href=&quot;#&quot;</code>{" "}
+              links and submit handlers are intentional stubs — wire up your own form library and routing.
+            </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              <LoginForm />
+              <SignupForm />
+            </div>
+            <LoginFormSplit />
+          </section>
+
           {/* Marketing blocks */}
           <section className="space-y-4">
             <h2 className="font-montserrat text-2xl font-semibold">Marketing blocks</h2>
             <p className="text-muted-foreground">
               Full-page composed sections — Hero, Feature grid, Pricing table, CTA band,
               Testimonials, Logo cloud, FAQ, Footer. See them assembled at{" "}
-              <a href="/marketing" className="text-accent underline-offset-4 hover:underline">
+              <a href="/marketing" className="text-accent underline underline-offset-4">
                 /marketing
               </a>
               .

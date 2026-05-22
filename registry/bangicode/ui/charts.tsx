@@ -26,8 +26,9 @@ import { cn } from "@/lib/utils";
 const CHART_COLORS = {
   primary: "#000c2c",       // --color-primary (Primary Navy)
   accent: "#016397",        // --color-secondary / --accent (Ocean Blue)
-  sky: "#80c5fe",           // --color-secondary-container (Sky Blue)
+  tint: "#465d96",          // --color-surface-tint (Blue-purple, WCAG AA on white)
   muted: "#444650",         // --color-on-surface-variant
+  sky: "#80c5fe",           // --color-secondary-container (Sky Blue — fill/decoration only, not text)
   grid: "#c5c6d1",          // --color-outline-variant
   surface: "#e6e8ee",       // --color-surface-container-high (tooltip bg)
 } as const;
@@ -35,7 +36,7 @@ const CHART_COLORS = {
 export const CHART_PALETTE = [
   CHART_COLORS.primary,
   CHART_COLORS.accent,
-  CHART_COLORS.sky,
+  CHART_COLORS.tint,
   CHART_COLORS.muted,
 ] as const;
 
