@@ -248,6 +248,11 @@ function BangicodePieChart({
   showLegend = true,
   className,
 }: PieChartProps) {
+  // Reserve space for the legend so the pie doesn't overlap it.
+  const legendH = showLegend ? 36 : 0;
+  const availH = height - legendH;
+  const cy = `${Math.round((availH / 2 / height) * 100)}%`;
+  const outerRadius = Math.min(innerRadius + 48, Math.floor(availH / 2) - 8);
   return (
     <div className={cn("w-full", className)}>
       <ResponsiveContainer width="100%" height={height}>
@@ -255,9 +260,9 @@ function BangicodePieChart({
           <Pie
             data={data}
             cx="50%"
-            cy="50%"
+            cy={cy}
             innerRadius={innerRadius}
-            outerRadius={innerRadius + 48}
+            outerRadius={outerRadius}
             dataKey="value"
             paddingAngle={2}
           >
